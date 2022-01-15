@@ -1,7 +1,7 @@
+import { Chartpage } from 'pages';
 import React from 'react';
 import { Route, Routes } from 'react-router';
-import { ChartApp } from './container';
-import GlobalStyle from './styles/GlobalStyle';
+import GlobalStyle from 'styles/GlobalStyle';
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         }}
       >
         <Routes>
-          <Route path="/report" element={<ChartApp />} />
+          <Route path="/report" element={<Chartpage />} />
         </Routes>
       </div>
     </>

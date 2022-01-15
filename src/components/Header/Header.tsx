@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <Logo>Logo</Logo>
+        <Logo>Motionlabs</Logo>
       </StyledHeader>
     </>
   );

@@ -1,0 +1,1 @@
+export { default as Chartpage } from "pages/Chart"
