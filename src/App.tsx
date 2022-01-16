@@ -1,4 +1,4 @@
-import { Chartpage } from 'pages';
+import { Boardpage, Chartpage, Home } from 'pages';
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import GlobalStyle from 'styles/GlobalStyle';
@@ -16,7 +16,9 @@ const App = () => {
         }}
       >
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/report" element={<Chartpage />} />
+          <Route path="/passenger" element={<Boardpage />} />
         </Routes>
       </div>
     </>
