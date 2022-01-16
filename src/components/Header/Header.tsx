@@ -1,11 +1,19 @@
 import React from 'react';
+import { Navigate, useNavigate } from 'react-router';
 import styled from 'styled-components';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       <StyledHeader>
-        <Logo>Motionlabs</Logo>
+        <Logo
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          Motionlabs
+        </Logo>
       </StyledHeader>
     </>
   );
@@ -33,4 +41,5 @@ const Logo = styled.h2`
   font-size: 1.5rem;
   color: hsl(0, 0%, 100%);
   font-weight: 700;
+  cursor: pointer;
 `;

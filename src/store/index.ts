@@ -5,8 +5,9 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 import chartReducer from 'store/reducer/chart.slice'
+import boardReducer from 'store/reducer/board.slice'
 
-const rootReducer = combineReducers({chartReducer})
+const rootReducer = combineReducers({chartReducer, boardReducer})
 
 export const store = configureStore({
   reducer: rootReducer,

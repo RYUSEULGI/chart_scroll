@@ -19,6 +19,10 @@ const StyledLayout = styled.div`
   padding: 1.25rem;
   position: relative;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   .title {
     font-size: 1.5rem;
     font-weight: 700;

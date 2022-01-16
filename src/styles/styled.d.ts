@@ -1,3 +1,3 @@
 interface BarPropsType {
-  period?:number
+  period:number
 }

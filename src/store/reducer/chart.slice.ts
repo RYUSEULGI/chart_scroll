@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { IChartType } from "types";
 import { RootState } from "store"
+import { IChartStateType } from "types/chartTypes";
 
-const initialState: IChartType = {
+const initialState: IChartStateType = {
   data : [{
     period: 0,
     cycle: 0,
