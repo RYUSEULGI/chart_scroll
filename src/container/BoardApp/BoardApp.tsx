@@ -1,12 +1,6 @@
 import axios from 'axios';
 import { Board } from 'components';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  boardSelector,
-  getBoardList,
-  nextPage,
-} from 'store/reducer/board.slice';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { IBoardList, IBoard, PageType } from 'types/boardTypes';
 
@@ -44,6 +38,11 @@ const BoardApp = () => {
     }
   };
 
+  /**
+   * scrollHeight : 콘텐츠 전체 높이
+   * scrollTop : 스크롤바 수직 위치
+   * offsetHeigth : css로 지정한 높이
+   */
   const handleScroll = () => {
     if (scrollRef.current) {
       const { scrollHeight, scrollTop, offsetHeight } = scrollRef.current;

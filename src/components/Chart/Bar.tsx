@@ -49,11 +49,11 @@ const BarContainer = styled.div`
   width: 5.8rem;
 `;
 
-const BarBar = styled.div<BarPropsType>`
+const BarBar = styled.div<{ period: number }>`
   width: 1.875rem;
   max-heigth: 6.25rem;
   height: ${(props) => `${props.period}px`};
-  background-color: hsl(0, 0%, 0%);
+  background-color: ${(props) => props.theme.black};
   border-radius: 10px;
   margin: 1rem 0;
 `;

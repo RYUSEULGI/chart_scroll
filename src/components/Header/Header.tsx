@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
 const Header = () => {
@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
   padding: 0 1.25rem;
   width: 47.5rem;
   height: 4.375rem;
-  background-color: hsl(0, 0%, 0%);
+  background-color: ${(props) => props.theme.black};
   z-index: 999;
   position: relative;
   display: flex;
@@ -39,7 +39,7 @@ const StyledHeader = styled.header`
 
 const Logo = styled.h2`
   font-size: 1.5rem;
-  color: hsl(0, 0%, 100%);
+  color: ${(props) => props.theme.white};
   font-weight: 700;
   cursor: pointer;
 `;

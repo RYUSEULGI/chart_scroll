@@ -16,14 +16,14 @@ const ChartApp = () => {
     <>
       <StyledChart>
         <Caption>
-          <div className="caption">
-            <div className="item"></div>
+          <CaptionItem>
+            <CaptionIdx size={7} />
             <span>활동주기</span>
-          </div>
-          <div className="caption2">
-            <div className="item2"></div>
+          </CaptionItem>
+          <CaptionItem>
+            <CaptionIdx size={22} />
             <span>활동기간, 시작일</span>
-          </div>
+          </CaptionItem>
         </Caption>
         <Line data={chartList} />
         <Bar data={chartList} />
@@ -46,31 +46,22 @@ const Caption = styled.div`
   display: flex;
   justify-content: flex-end;
   color: hsl(0, 0%, 50%);
+`;
 
-  .caption,
-  .caption2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .item {
-    background-color: hsl(0, 0%, 0%);
-    border-radius: 14px;
-    height: 7px;
-    width: 7px;
-    margin-right: 10px;
-  }
-
-  .item2 {
-    background-color: hsl(0, 0%, 0%);
-    border-radius: 14px;
-    height: 7px;
-    width: 22px;
-    margin: 0 10px;
-  }
+const CaptionItem = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
   span {
     font-size: 0.7rem;
   }
+`;
+
+const CaptionIdx = styled.div<{ size: number }>`
+  background-color: hsl(0, 0%, 0%);
+  border-radius: 14px;
+  height: 7px;
+  width: ${(props) => `${props.size}px`};
+  margin: 0 10px;
 `;

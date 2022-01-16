@@ -44,6 +44,15 @@ const Line = ({ data }: IChartStateType) => {
   //   return heigth - (y / getMaxY()) * heigth;
   // };
 
+  const xLeft = 50;
+  const yBottom = 50;
+  const border = 20;
+
+  const x1Axis = xLeft;
+  const y1Axis = 400 - yBottom;
+  const x2Axis = 400 - border;
+  const y2Axis = 400 - yBottom;
+
   return (
     <>
       <StyledLine>
@@ -72,7 +81,7 @@ const Line = ({ data }: IChartStateType) => {
             );
           })}
         </svg>
-        <DatePosition>
+        <DatePosition cycle={32}>
           {data.map((list) => {
             return <span key={list.cycle}>{list.cycle}일</span>;
           })}
@@ -95,8 +104,9 @@ const StyledLine = styled.div`
   position: relative;
 `;
 
-const DatePosition = styled.div`
+const DatePosition = styled.div<{ cycle: number }>`
   position: absolute;
+  color: ${(props) => (props.cycle >= 100 ? '#f00' : props.theme.black)};
 
   .span:nth-child(1) {
     top: 102px;

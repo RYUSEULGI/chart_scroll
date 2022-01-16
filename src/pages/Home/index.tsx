@@ -1,29 +1,19 @@
 import { Header, Layout } from 'components';
 import React from 'react';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Header />
       <Layout>
         <StyledHome>
-          <li
-            onClick={() => {
-              navigate('/report');
-            }}
-          >
-            레포트
+          <li>
+            <Link to="/report">레포트</Link>
           </li>
-          <li
-            onClick={() => {
-              navigate('/passenger');
-            }}
-          >
-            승객목록
+          <li>
+            <Link to="/passenger">승객목록</Link>
           </li>
         </StyledHome>
       </Layout>
