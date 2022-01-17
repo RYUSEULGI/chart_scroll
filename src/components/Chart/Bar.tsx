@@ -40,6 +40,10 @@ const StyledBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: end;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const BarContainer = styled.div`
@@ -47,6 +51,10 @@ const BarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 5.8rem;
+
+  @media (max-width: 473px) {
+    width: 4rem;
+  }
 `;
 
 const BarBar = styled.div<{ heigth: number }>`

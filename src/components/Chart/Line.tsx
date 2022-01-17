@@ -65,6 +65,10 @@ const StyledLine = styled.div`
   align-items: center;
   margin-bottom: 5rem;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Date = styled.span<{ cycle: number; x: number; y: number }>`
@@ -74,4 +78,13 @@ const Date = styled.span<{ cycle: number; x: number; y: number }>`
   color: ${(props) => (props.cycle >= 100 ? '#f00' : 'hsl(0, 0%, 52%)')};
   font-size: 14px;
   font-weight: 700;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    left: ${(props) => `${props.y + 30}px`};
+  }
+
+  @media (max-width: 473px) {
+    left: ${(props) => `${props.y - 10}px`};
+  }
 `;
