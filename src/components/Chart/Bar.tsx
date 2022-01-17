@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { IChartStateType } from 'types/chartTypes';
+import { IChartData, IChartList } from 'types/chartTypes';
 
-const Bar = ({ data }: IChartStateType) => {
+const Bar = ({ data }: IChartList) => {
   const maxPeriod = () => {
     const max = data.map((list) => list.period);
     return Math.max.apply(null, max);
@@ -10,16 +10,16 @@ const Bar = ({ data }: IChartStateType) => {
   return (
     <>
       <StyledBar>
-        {data.map((list) => {
+        {data.map((list: IChartData) => {
           const month = list.startDate.substr(5, 2);
           const day = list.startDate.substr(8, 2);
           const heigth = (list.period / maxPeriod()) * 100;
 
           return (
-            <div key={list.cycle}>
+            <div key={list.startDate}>
               <BarContainer>
                 <span>{list.period}일</span>
-                <BarBar period={heigth} />
+                <BarBar heigth={heigth} />
                 <span>
                   {month}/{day}
                 </span>
@@ -49,11 +49,11 @@ const BarContainer = styled.div`
   width: 5.8rem;
 `;
 
-const BarBar = styled.div<{ period: number }>`
+const BarBar = styled.div<{ heigth: number }>`
   width: 1.875rem;
   max-heigth: 6.25rem;
-  height: ${(props) => `${props.period}px`};
-  background-color: ${(props) => props.theme.black};
+  height: ${(props) => `${props.heigth}px`};
+  background-color: ${({ theme }) => theme.black};
   border-radius: 10px;
   margin: 1rem 0;
 `;

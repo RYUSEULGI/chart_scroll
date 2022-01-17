@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Header = () => {
   const navigate = useNavigate();
+
   return (
     <>
       <StyledHeader>
@@ -26,7 +27,7 @@ const StyledHeader = styled.header`
   padding: 0 1.25rem;
   width: 47.5rem;
   height: 4.375rem;
-  background-color: ${(props) => props.theme.black};
+  background-color: ${({ theme }) => theme.black};
   z-index: 999;
   position: relative;
   display: flex;
@@ -39,7 +40,7 @@ const StyledHeader = styled.header`
 
 const Logo = styled.h2`
   font-size: 1.5rem;
-  color: ${(props) => props.theme.white};
+  color: ${({ theme }) => theme.white};
   font-weight: 700;
   cursor: pointer;
 `;

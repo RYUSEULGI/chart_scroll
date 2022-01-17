@@ -36,7 +36,7 @@ export default ChartApp;
 
 const StyledChart = styled.div`
   border-radius: 7px;
-  border: 1px solid hsl(0, 0%, 91%);
+  border: ${({ theme }) => `solid 1px ${theme.darkGray}`};
   width: 100%;
   height: 30rem;
 `;
@@ -59,7 +59,7 @@ const CaptionItem = styled.span`
 `;
 
 const CaptionIdx = styled.div<{ size: number }>`
-  background-color: hsl(0, 0%, 0%);
+  background-color: ${({ theme }) => theme.black};
   border-radius: 14px;
   height: 7px;
   width: ${(props) => `${props.size}px`};

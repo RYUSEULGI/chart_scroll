@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IBoardList } from 'types/boardTypes';
+import { IBoardProps } from 'types/boardTypes';
 
-const Board = (props: IBoardList) => {
+const Board = (props: IBoardProps) => {
   const { _id, name, trips, airline, __v } = props;
 
   return (
@@ -27,7 +27,7 @@ export default Board;
 const StyledBoard = styled.li`
   width: 100%;
   padding: 1.25rem 0;
-  border-top: ${(props) => `solid 1px ${props.theme.darkGray}`};
+  border-top: ${({ theme }) => `solid 1px ${theme.darkGray}`};
 `;
 
 const Name = styled.div`
@@ -44,7 +44,7 @@ const Name = styled.div`
 const Box = styled.div`
   width: 100%;
   height: auto;
-  background-color: ${(props) => props.theme.gray};
+  background-color: ${({ theme }) => theme.gray};
   margin-top: 1rem;
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ const BoxImg = styled.img`
 `;
 
 const BoxBottom = styled.div`
-  color: ${(props) => props.theme.darkGray};
+  color: ${({ theme }) => theme.darkGray};
   font-weight: 700;
   text-align: right;
   margin: 1.25rem 0;

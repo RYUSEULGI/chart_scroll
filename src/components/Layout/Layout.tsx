@@ -15,7 +15,7 @@ const StyledLayout = styled.div`
   margin: 0 auto;
   width: 47.5rem;
   height: 100vh;
-  background-color: ${(props) => props.theme.white};
+  background-color: ${({ theme }) => theme.white};
   padding: 1.25rem;
   position: relative;
 

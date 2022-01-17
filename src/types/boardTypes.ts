@@ -1,11 +1,11 @@
 export interface IBoard{
-  data : IBoardList[]
+  data : IBoardProps[]
   totalPages: number
   totalpassengers: number
   page? : number
 }
 
-export interface IBoardList {
+export interface IBoardProps {
   _id : string
   name: string
   trips: number

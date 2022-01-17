@@ -2,13 +2,13 @@ import axios from 'axios';
 import { Board } from 'components';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { IBoardList, IBoard, PageType } from 'types/boardTypes';
+import { IBoardProps, IBoard } from 'types/boardTypes';
 
 const BoardApp = () => {
   const scrollRef = useRef<HTMLUListElement | null>(null);
   const pageRef = useRef<number>(0);
 
-  const [list, setList] = useState<IBoardList[]>([]);
+  const [list, setList] = useState<IBoardProps[]>([]);
   const [bottom, setBottom] = useState<boolean>(false);
   const [lastPage, setLastPage] = useState<boolean>(false);
 
@@ -17,6 +17,7 @@ const BoardApp = () => {
   }, []);
 
   useEffect(() => {
+    // 스크롤이 끝에 도달한 경우
     if (bottom) {
       pageRef.current = pageRef.current + 1;
       !lastPage && getList();
@@ -51,7 +52,8 @@ const BoardApp = () => {
   };
 
   /* 
-  * initialState가 처음에 렌더링 됨 어떻게 바꿔야 할지 생각해보기
+  * useSelector가 한박자 늦게 실행됨 
+  * 어떻게 바꿔야 할지 생각해보기
 
   const dispatch = useDispatch();
   const boardList = useSelector(boardSelector);

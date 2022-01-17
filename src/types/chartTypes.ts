@@ -7,13 +7,13 @@ export interface IChartStateType {
   }]
 }
 
-// export interface IChartList{
-//   data : IChartData[]
-// }
+export interface IChartList{
+  data : IChartData[]
+}
 
-// export interface IChartData{
-//   period: number,
-//   cycle: number,
-//   startDate: string,
-//   endDate: string,
-// }
+export interface IChartData{
+  period: number,
+  cycle: number,
+  startDate: string,
+  endDate: string,
+}
